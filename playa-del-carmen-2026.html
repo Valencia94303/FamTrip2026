@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playa del Carmen 2026 — Valencia Family Trip</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Pacifico&display=swap');
+
+  :root {
+    --coral: #FF6B6B;
+    --turquoise: #4ECDC4;
+    --sand: #F5F0E8;
+    --ocean: #0B7189;
+    --deep: #0C1B2A;
+    --sunset: #2AB5A0;
+    --palm: #2ECC71;
+    --pink: #7DD3C0;
+    --sky: #74B9FF;
+    --teal-light: #6FE4D0;
+    --teal-dark: #0A5E55;
+    --seafoam: #A8E6CF;
+    --aqua: #00C9B7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--deep);
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #064E5C 0%, #0B7189 25%, #4ECDC4 55%, #A8E6CF 80%, #F5F0E8 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff20' d='M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,218.7C672,213,768,171,864,165.3C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'/%3E%3C/svg%3E") no-repeat bottom;
+    background-size: cover;
+  }
+
+  .hero-content { position: relative; z-index: 2; padding: 2rem; }
+
+  .hero h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+    margin-bottom: 0.5rem;
+    animation: floatIn 1s ease-out;
+  }
+
+  .hero .subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 300;
+    opacity: 0.95;
+    margin-bottom: 1rem;
+    animation: floatIn 1s ease-out 0.2s both;
+  }
+
+  .hero .emoji-row {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    animation: floatIn 1s ease-out 0.4s both;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    animation: bounce 2s infinite;
+    font-size: 1.5rem;
+    opacity: 0.8;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  @keyframes floatIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(60px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* SECTIONS */
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.1rem;
+    opacity: 0.7;
+    margin-bottom: 2.5rem;
+  }
+
+  /* FAMILY GROUPS */
+  .groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .group-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .group-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  }
+
+  .group-card .icon { font-size: 3rem; margin-bottom: 0.8rem; }
+  .group-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .group-card .members { opacity: 0.7; font-size: 0.95rem; line-height: 1.6; }
+
+  /* TOGGLE */
+  .toggle-section {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .toggle-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+
+  .toggle-label.inactive { opacity: 0.4; }
+
+  .toggle-switch {
+    width: 60px;
+    height: 32px;
+    background: var(--ocean);
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .toggle-switch.active { background: var(--aqua); }
+
+  .toggle-switch::after {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s;
+  }
+
+  .toggle-switch.active::after { transform: translateX(28px); }
+
+  /* PEOPLE SELECTOR */
+  .people-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .people-btn {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,0.3);
+    background: transparent;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .people-btn.active {
+    background: var(--turquoise);
+    border-color: var(--turquoise);
+    color: var(--deep);
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(78, 205, 196, 0.4);
+  }
+
+  .people-btn:hover:not(.active) {
+    border-color: rgba(255,255,255,0.6);
+    transform: scale(1.02);
+  }
+
+  /* COST BREAKDOWN */
+  .cost-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .cost-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03));
+    border-radius: 18px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.4s;
+  }
+
+  .cost-card .emoji { font-size: 2.2rem; margin-bottom: 0.5rem; }
+  .cost-card .label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; }
+  .cost-card .amount {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--teal-light), var(--sand));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cost-card .per-person { font-size: 0.85rem; opacity: 0.5; margin-top: 0.3rem; }
+
+  .total-banner {
+    background: linear-gradient(135deg, var(--turquoise), var(--ocean));
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    box-shadow: 0 10px 40px rgba(78, 205, 196, 0.3);
+  }
+
+  .total-banner .total-label { font-size: 1rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 2px; }
+  .total-banner .total-amount { font-size: 3rem; font-weight: 900; }
+  .total-banner .total-sub { font-size: 1rem; opacity: 0.7; margin-top: 0.3rem; }
+
+  .family-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .family-cost-card {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.12), rgba(255,255,255,0.04));
+    border: 1px solid rgba(78, 205, 196, 0.25);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+
+  .family-cost-card:hover { transform: translateY(-3px); }
+  .family-cost-card .family-name { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.3rem; }
+  .family-cost-card .family-amount { font-size: 2rem; font-weight: 900; color: var(--teal-light); }
+  .family-cost-card .family-detail { font-size: 0.85rem; opacity: 0.55; margin-top: 0.3rem; }
+
+  /* COMPARISON */
+  .compare-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .compare-table th {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .compare-table td {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .compare-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .badge-hot { background: var(--coral); color: #fff; }
+  .badge-cool { background: var(--turquoise); color: var(--deep); }
+  .badge-save { background: var(--aqua); color: var(--deep); }
+
+  /* XCARET */
+  .xcaret-section {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(168, 230, 207, 0.1));
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .xcaret-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .xcaret-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 1.8rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .xcaret-card h4 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .xcaret-card .price-big { font-size: 2.2rem; font-weight: 900; color: var(--teal-light); }
+  .xcaret-card .details { font-size: 0.9rem; opacity: 0.65; line-height: 1.8; }
+
+  /* WEATHER */
+  .weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .weather-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .weather-card .temp { font-size: 3rem; font-weight: 900; }
+  .weather-card .weather-icon { font-size: 4rem; margin: 0.5rem 0; }
+  .weather-card .weather-details { font-size: 0.95rem; opacity: 0.7; line-height: 1.8; }
+
+  /* FUN FACTS */
+  .fun-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .fun-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.3s;
+  }
+
+  .fun-card:hover { transform: translateY(-3px); }
+  .fun-card .fun-emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+  .fun-card h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+  .fun-card p { font-size: 0.88rem; opacity: 0.65; line-height: 1.5; }
+
+  /* RSVP */
+  .rsvp-section {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background: linear-gradient(135deg, var(--ocean), var(--turquoise), var(--seafoam));
+    border-radius: 30px;
+    margin: 2rem 0;
+  }
+
+  .rsvp-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .rsvp-section p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 1.5rem; }
+
+  .water-divider {
+    width: 100%;
+    height: 80px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%234ECDC4' fill-opacity='0.25' d='M0,50 C360,100 720,0 1080,50 C1260,75 1380,50 1440,50 L1440,100 L0,100Z'/%3E%3Cpath fill='%230B7189' fill-opacity='0.15' d='M0,70 C360,30 720,90 1080,60 C1260,45 1380,70 1440,70 L1440,100 L0,100Z'/%3E%3C/svg%3E") no-repeat center;
+    background-size: cover;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    opacity: 0.4;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 2.5rem 1rem; }
+    .cost-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Playa del Carmen</h1>
+    <div class="subtitle">Valencia Family Trip 2026</div>
+    <div class="emoji-row">🌴 🌊 🇲🇽 ☀️ 🐢</div>
+    <p style="font-size:1.05rem; opacity:0.85; max-width:550px; margin:0 auto;">Japan can wait — this year, we're going to the Riviera Maya!<br><span style="font-size:0.9rem; opacity:0.8;">🏖️ Jul 27 – Aug 6 &nbsp;or&nbsp; 🎄 Dec 5 – 17 — let's figure out when, who, and how much.</span></p>
+  </div>
+  <div class="scroll-hint">👇 Scroll down</div>
+</div>
+
+<!-- FAMILY GROUPS -->
+<section>
+  <div class="fade-in">
+    <div class="section-title">👨‍👩‍👧‍👦 The Crew</div>
+    <div class="section-subtitle">Who's coming? That's the big question.</div>
+  </div>
+
+  <div class="groups-grid">
+    <div class="group-card fade-in">
+      <div class="icon">🏠</div>
+      <h3 style="color: var(--turquoise);">Miguel & Karen</h3>
+      <div class="members">Miguelito & Margarita<br><strong>4 people</strong></div>
+    </div>
+    <div class="group-card fade-in">
+      <div class="icon">🏡</div>
+      <h3 style="color: var(--seafoam);">Rubén & Mariana</h3>
+      <div class="members">Leilani & Mateo<br><strong>4 people</strong></div>
+    </div>
+    <div class="group-card fade-in">
+      <div class="icon">💛</div>
+      <h3 style="color: var(--teal-light);">Gloria & Rubén Sr.</h3>
+      <div class="members">Daisy<br><strong>3 people</strong></div>
+    </div>
+  </div>
+
+  <div class="fade-in" style="text-align:center; margin-top:1rem;">
+    <p style="opacity:0.6;">Full squad (everyone!) = <strong>11 people</strong> &nbsp;|&nbsp; Miguel + Karen + Rubén + Mariana & kids = <strong>8</strong> &nbsp;|&nbsp; Min crew = <strong>7 people</strong></p>
+  </div>
+</section>
+
+<div class="water-divider"></div>
+
+<!-- COST EXPLORER -->
+<section>
+  <div class="fade-in">
+    <div class="section-title">💰 Cost Breakdown</div>
+    <div class="section-subtitle">Toggle between seasons and group sizes to see how the numbers change</div>
+  </div>
+
+  <!-- Season Toggle -->
+  <div class="toggle-section fade-in">
+    <div class="toggle-row">
+      <span class="toggle-label" id="label-aug" onclick="setSeason('aug')">🏖️ Jul 27 – Aug 6</span>
+      <div class="toggle-switch" id="season-toggle" onclick="toggleSeason()"></div>
+      <span class="toggle-label inactive" id="label-dec" onclick="setSeason('dec')">🎄 Dec 5 – 17</span>
+    </div>
+  </div>
+
+  <!-- People Toggle -->
+  <div class="people-selector fade-in">
+    <button class="people-btn active" data-count="7" onclick="setPeople(7)">7 People</button>
+    <button class="people-btn" data-count="11" onclick="setPeople(11)">11 People</button>
+  </div>
+
+  <!-- Cost Cards -->
+  <div class="cost-grid fade-in" id="cost-cards"></div>
+
+  <!-- Total Banner -->
+  <div class="total-banner fade-in" id="total-banner"></div>
+
+  <!-- Per-Family Breakdown -->
+  <div class="fade-in" id="family-breakdown" style="margin-top:1.5rem;"></div>
+
+  <!-- Quick Compare Table -->
+  <div class="fade-in" style="margin-top:3rem;">
+    <h3 style="text-align:center; margin-bottom:1rem; font-size:1.4rem;">📊 Quick Comparison</h3>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>🏖️ Jul 27 – Aug 6</th>
+          <th>🎄 Dec 5 – 17</th>
+          <th>Difference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>7 People</strong><br><span style="font-size:0.75rem; opacity:0.5;">2 families</span></td>
+          <td><strong>$3,097</strong> /family<br><span style="font-size:0.8rem; opacity:0.6;">$885 /person</span></td>
+          <td><strong>$3,202</strong> /family<br><span style="font-size:0.8rem; opacity:0.6;">$915 /person</span></td>
+          <td><span class="badge badge-save">Aug saves $105/family</span></td>
+        </tr>
+        <tr>
+          <td><strong>11 People</strong><br><span style="font-size:0.75rem; opacity:0.5;">3 families</span></td>
+          <td><strong>$2,764</strong> /family<br><span style="font-size:0.8rem; opacity:0.6;">$805 /person</span></td>
+          <td><strong>$3,315</strong> /family<br><span style="font-size:0.8rem; opacity:0.6;">$955 /person</span></td>
+          <td><span class="badge badge-save">Aug saves $551/family</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="water-divider"></div>
+
+<!-- XCARET ADD-ON -->
+<section>
+  <div class="fade-in">
+    <div class="section-title">✨ Optional Upgrade: Hotel Xcaret</div>
+    <div class="section-subtitle">4-night all-inclusive luxury add-on for those who want to treat themselves</div>
+  </div>
+
+  <div class="xcaret-section fade-in" id="xcaret-section">
+    <div class="xcaret-grid">
+      <div class="xcaret-card">
+        <div style="font-size:2rem; margin-bottom:0.5rem;">👨‍👩‍👧‍👦</div>
+        <h4>Family Room</h4>
+        <div style="font-size:0.85rem; opacity:0.6; margin-bottom:0.5rem;">2 Adults + 2 Children · 4 Nights</div>
+        <div class="price-big" id="xcaret-family-total">$2,860</div>
+        <div class="details">
+          <span id="xcaret-family-night">$715 / night</span><br>
+          <span id="xcaret-family-pp">$1,430 / person</span><br>
+          <span id="xcaret-family-ppn">$357.50 / person / night</span>
+        </div>
+      </div>
+      <div class="xcaret-card">
+        <div style="font-size:2rem; margin-bottom:0.5rem;">👫👤</div>
+        <h4>Adults Room</h4>
+        <div style="font-size:0.85rem; opacity:0.6; margin-bottom:0.5rem;">3 Adults · 4 Nights</div>
+        <div class="price-big" id="xcaret-adult-total">$4,141</div>
+        <div class="details">
+          <span id="xcaret-adult-night">$1,035 / night</span><br>
+          <span id="xcaret-adult-pp">$1,380 / person</span><br>
+          <span id="xcaret-adult-ppn">$345.10 / person / night</span>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:1.5rem; opacity:0.5; font-size:0.9rem;">This is <em>in addition to</em> the base trip cost above. Hotel Xcaret is all-inclusive (food, drinks, parks & more).</p>
+  </div>
+</section>
+
+<div class="water-divider"></div>
+
+<!-- WEATHER -->
+<section>
+  <div class="fade-in">
+    <div class="section-title">🌤️ Weather: August vs December</div>
+    <div class="section-subtitle">What should we expect?</div>
+  </div>
+
+  <div class="weather-grid fade-in">
+    <div class="weather-card" style="border-top: 4px solid var(--coral);">
+      <h3>🏖️ Late July / August</h3>
+      <div class="weather-icon">🌡️🌧️</div>
+      <div class="temp" style="color: var(--coral);">88°F / 31°C</div>
+      <div class="weather-details">
+        <span class="badge badge-hot" style="margin-bottom:0.5rem; display:inline-block;">Hot & Humid</span><br>
+        Rainy season — expect afternoon downpours<br>
+        High humidity, very warm evenings<br>
+        Ocean water: warm bathtub vibes 🛁<br>
+        Fewer tourists, lower prices
+      </div>
+    </div>
+    <div class="weather-card" style="border-top: 4px solid var(--sky);">
+      <h3>🎄 December</h3>
+      <div class="weather-icon">☀️🌴</div>
+      <div class="temp" style="color: var(--sky);">82°F / 28°C</div>
+      <div class="weather-details">
+        <span class="badge badge-cool" style="margin-bottom:0.5rem; display:inline-block;">Warm & Dry</span><br>
+        Dry season — mostly sunny skies<br>
+        Pleasant evenings with a light breeze<br>
+        Ocean water: warm and perfect 🌊<br>
+        Peak tourist season, festive vibes
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="water-divider"></div>
+
+<!-- FUN STUFF -->
+<section>
+  <div class="fade-in">
+    <div class="section-title">🎉 Things To Do</div>
+    <div class="section-subtitle">More than just the beach (but also... the beach)</div>
+  </div>
+
+  <div class="fun-grid fade-in">
+    <div class="fun-card">
+      <div class="fun-emoji">🏊</div>
+      <h4>Cenotes</h4>
+      <p>Crystal-clear natural swimming holes hidden in the jungle. Magical for kids and adults alike.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-emoji">🐢</div>
+      <h4>Akumal Bay</h4>
+      <p>Snorkel with sea turtles right from the beach. A bucket-list experience for the whole family.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-emoji">🏛️</div>
+      <h4>Tulum Ruins</h4>
+      <p>Ancient Mayan ruins overlooking the Caribbean. History meets breathtaking views.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-emoji">🎢</div>
+      <h4>Xcaret Park</h4>
+      <p>50+ attractions: underground rivers, butterfly gardens, jaguar island, and a spectacular night show.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-emoji">🐒</div>
+      <h4>Punta Laguna</h4>
+      <p>Spot spider monkeys in the wild, go canoeing, and try zip-lining through the canopy.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-emoji">🛍️</div>
+      <h4>5th Avenue</h4>
+      <p>Playa's famous pedestrian street lined with shops, restaurants, and street performers.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-emoji">🐊</div>
+      <h4>Crococun Zoo</h4>
+      <p>Get up close with monkeys, macaws, lizards, and more on a guided jungle tour.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-emoji">🕳️</div>
+      <h4>Río Secreto</h4>
+      <p>Explore stunning underground caves and cenotes with helmets and headlamps. Truly unforgettable.</p>
+    </div>
+  </div>
+</section>
+
+<div class="water-divider"></div>
+
+<!-- RSVP -->
+<section>
+  <div class="rsvp-section fade-in">
+    <h2>Are You In? 🙌</h2>
+    <p>Gloria, Rubén Sr., Daisy, Rubén, Mariana — let's lock in the dates and headcount so we can book everything!</p>
+    <div style="font-size:1.5rem; margin-top:1rem;">
+      🌊 Playa is calling... 🌊
+    </div>
+  </div>
+</section>
+
+<footer>
+  Made with ☀️ for the Valencia Family · 2026
+</footer>
+
+<script>
+const data = {
+  aug: {
+    7: {
+      dates: 'Jul 27 – Aug 6 · 11 nights',
+      flights: { total: 2240, pp: 320 },
+      stay: { total: 1743, pp: 249 },
+      car: { total: 530, pp: 76 },
+      food: { total: 1680, pp: 240 },
+      grandTotal: 6193,
+      perPerson: 885,
+      numFamilies: 2,
+      perFamily: 3097,
+      familyNames: ['Miguel & Karen', 'Rubén & Mariana'],
+      splitInfo: 'Split by 2 families'
+    },
+    11: {
+      dates: 'Jul 27 – Aug 6 · 11 nights',
+      flights: { total: 3200, pp: 320 },
+      stay: { total: 1743, pp: 158 },
+      car: { total: 950, pp: 86 },
+      food: { total: 2400, pp: 240 },
+      grandTotal: 8293,
+      perPerson: 805,
+      numFamilies: 3,
+      perFamily: 2764,
+      familyNames: ['Miguel & Karen', 'Rubén & Mariana', 'Gloria & Rubén Sr.'],
+      splitInfo: 'Split by 3 families'
+    }
+  },
+  dec: {
+    7: {
+      dates: 'Dec 5 – 17 · 12 nights',
+      flights: { total: 2240, pp: 320 },
+      stay: { total: 1200, pp: 171 },
+      car: { total: 1284, pp: 183 },
+      food: { total: 1680, pp: 240 },
+      grandTotal: 6404,
+      perPerson: 915,
+      numFamilies: 2,
+      perFamily: 3202,
+      familyNames: ['Miguel & Karen', 'Rubén & Mariana'],
+      splitInfo: 'Split by 2 families'
+    },
+    11: {
+      dates: 'Dec 5 – 17 · 12 nights',
+      flights: { total: 3200, pp: 320 },
+      stay: { total: 2300, pp: 209 },
+      car: { total: 2046, pp: 186 },
+      food: { total: 2400, pp: 240 },
+      grandTotal: 9946,
+      perPerson: 955,
+      numFamilies: 3,
+      perFamily: 3315,
+      familyNames: ['Miguel & Karen', 'Rubén & Mariana', 'Gloria & Rubén Sr.'],
+      splitInfo: 'Split by 3 families'
+    }
+  }
+};
+
+const xcaretData = {
+  aug: {
+    11: {
+      family: { total: 3087, night: 772, pp: 1544, ppn: 386 },
+      adult: { total: 4475, night: 1119, pp: 1492, ppn: 373 }
+    }
+  },
+  default: {
+    family: { total: 2860, night: 715, pp: 1430, ppn: 357.50 },
+    adult: { total: 4141, night: 1035, pp: 1380, ppn: 345.10 }
+  }
+};
+
+let currentSeason = 'aug';
+let currentPeople = 7;
+
+function setSeason(s) {
+  currentSeason = s;
+  updateToggles();
+  render();
+}
+
+function toggleSeason() {
+  currentSeason = currentSeason === 'aug' ? 'dec' : 'aug';
+  updateToggles();
+  render();
+}
+
+function setPeople(n) {
+  currentPeople = n;
+  document.querySelectorAll('.people-btn').forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.count) === n);
+  });
+  render();
+}
+
+function updateToggles() {
+  const toggle = document.getElementById('season-toggle');
+  const labelAug = document.getElementById('label-aug');
+  const labelDec = document.getElementById('label-dec');
+
+  if (currentSeason === 'dec') {
+    toggle.classList.add('active');
+    labelAug.classList.add('inactive');
+    labelDec.classList.remove('inactive');
+  } else {
+    toggle.classList.remove('active');
+    labelAug.classList.remove('inactive');
+    labelDec.classList.add('inactive');
+  }
+}
+
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString();
+}
+
+function render() {
+  const d = data[currentSeason][currentPeople];
+  const seasonLabel = currentSeason === 'aug' ? 'August 2026' : 'December 2026';
+  const items = [
+    { emoji: '✈️', label: 'Flights', total: d.flights.total, pp: d.flights.pp },
+    { emoji: '🏠', label: 'Airbnb Stay', total: d.stay.total, pp: d.stay.pp },
+    { emoji: '🚗', label: 'Car Rental', total: d.car.total, pp: d.car.pp },
+    { emoji: '🍽️', label: 'Food', total: d.food.total, pp: d.food.pp },
+  ];
+
+  const cardsHtml = items.map(i => `
+    <div class="cost-card">
+      <div class="emoji">${i.emoji}</div>
+      <div class="label">${i.label}</div>
+      <div class="amount">${fmt(i.total)}</div>
+      <div class="per-person">${fmt(i.pp)} / person</div>
+    </div>
+  `).join('');
+  document.getElementById('cost-cards').innerHTML = cardsHtml;
+
+  document.getElementById('total-banner').innerHTML = `
+    <div class="total-label">${d.dates} · ${currentPeople} People</div>
+    <div class="total-amount">${fmt(d.grandTotal)}</div>
+    <div class="total-sub">${fmt(d.perPerson)} per person &nbsp;·&nbsp; ${d.splitInfo}</div>
+  `;
+
+  const familyIcons = ['🏠', '🏡', '💛'];
+  const familyMembers = {
+    'Miguel & Karen': '+ Miguelito & Margarita',
+    'Rubén & Mariana': '+ Leilani & Mateo',
+    'Gloria & Rubén Sr.': '+ Daisy'
+  };
+  const familyCardsHtml = d.familyNames.map((name, i) => `
+    <div class="family-cost-card">
+      <div style="font-size:1.5rem;">${familyIcons[i]}</div>
+      <div class="family-name">${name}</div>
+      <div style="font-size:0.8rem; opacity:0.5;">${familyMembers[name]}</div>
+      <div class="family-amount">${fmt(d.perFamily)}</div>
+      <div class="family-detail">per family share</div>
+    </div>
+  `).join('');
+  document.getElementById('family-breakdown').innerHTML = `
+    <h3 style="text-align:center; margin-bottom:1rem; font-size:1.2rem; opacity:0.7;">💸 What Each Family Owes</h3>
+    <div class="family-grid">${familyCardsHtml}</div>
+  `;
+
+  // Xcaret
+  let xc;
+  if (currentSeason === 'aug' && currentPeople === 11) {
+    xc = xcaretData.aug[11];
+  } else {
+    xc = xcaretData.default;
+  }
+  document.getElementById('xcaret-family-total').textContent = fmt(xc.family.total);
+  document.getElementById('xcaret-family-night').textContent = fmt(xc.family.night) + ' / night';
+  document.getElementById('xcaret-family-pp').textContent = fmt(xc.family.pp) + ' / person';
+  document.getElementById('xcaret-family-ppn').textContent = fmt(xc.family.ppn) + ' / person / night';
+  document.getElementById('xcaret-adult-total').textContent = fmt(xc.adult.total);
+  document.getElementById('xcaret-adult-night').textContent = fmt(xc.adult.night) + ' / night';
+  document.getElementById('xcaret-adult-pp').textContent = fmt(xc.adult.pp) + ' / person';
+  document.getElementById('xcaret-adult-ppn').textContent = fmt(xc.adult.ppn) + ' / person / night';
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Initial render
+render();
+</script>
+
+</body>
+</html>
