@@ -490,7 +490,7 @@
   </div>
 
   <div class="fade-in" style="text-align:center; margin-top:1rem;">
-    <p style="opacity:0.6;">Full squad (everyone!) = <strong>11 people</strong> &nbsp;|&nbsp; Miguel + Karen + Rubén + Mariana & kids = <strong>8</strong> &nbsp;|&nbsp; Min crew = <strong>7 people</strong></p>
+    <p style="opacity:0.6;">Full squad (everyone!) = <strong>11</strong> &nbsp;|&nbsp; Miguel & Karen + Rubén & Mariana + kids = <strong>8</strong> &nbsp;|&nbsp; Miguel & Karen + kids + parents & Daisy = <strong>7</strong></p>
   </div>
 </section>
 
@@ -515,6 +515,7 @@
   <!-- People Toggle -->
   <div class="people-selector fade-in">
     <button class="people-btn active" data-count="7" onclick="setPeople(7)">7 People</button>
+    <button class="people-btn" data-count="8" onclick="setPeople(8)">8 People</button>
     <button class="people-btn" data-count="11" onclick="setPeople(11)">11 People</button>
   </div>
 
@@ -541,16 +542,22 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>7 People</strong><br><span style="font-size:0.75rem; opacity:0.5;">2 families</span></td>
-          <td><strong>$3,097</strong> /family<br><span style="font-size:0.8rem; opacity:0.6;">$885 /person</span></td>
-          <td><strong>$3,202</strong> /family<br><span style="font-size:0.8rem; opacity:0.6;">$915 /person</span></td>
-          <td><span class="badge badge-save">Aug saves $105/family</span></td>
+          <td><strong>7 People</strong><br><span style="font-size:0.75rem; opacity:0.5;">Miguel's fam + parents</span></td>
+          <td><strong>$3,097</strong> /group<br><span style="font-size:0.8rem; opacity:0.6;">$885 /person</span></td>
+          <td><strong>$3,202</strong> /group<br><span style="font-size:0.8rem; opacity:0.6;">$915 /person</span></td>
+          <td><span class="badge badge-save">Aug saves $105</span></td>
         </tr>
         <tr>
-          <td><strong>11 People</strong><br><span style="font-size:0.75rem; opacity:0.5;">3 families</span></td>
+          <td><strong>8 People</strong><br><span style="font-size:0.75rem; opacity:0.5;">Miguel's + Rubén's fams</span></td>
+          <td><strong>$3,377</strong> /family<br><span style="font-size:0.8rem; opacity:0.6;">$844 /person</span></td>
+          <td><strong>$3,482</strong> /family<br><span style="font-size:0.8rem; opacity:0.6;">$871 /person</span></td>
+          <td><span class="badge badge-save">Aug saves $105</span></td>
+        </tr>
+        <tr>
+          <td><strong>11 People</strong><br><span style="font-size:0.75rem; opacity:0.5;">Everyone!</span></td>
           <td><strong>$2,764</strong> /family<br><span style="font-size:0.8rem; opacity:0.6;">$805 /person</span></td>
           <td><strong>$3,315</strong> /family<br><span style="font-size:0.8rem; opacity:0.6;">$955 /person</span></td>
-          <td><span class="badge badge-save">Aug saves $551/family</span></td>
+          <td><span class="badge badge-save">Aug saves $551</span></td>
         </tr>
       </tbody>
     </table>
@@ -715,6 +722,19 @@ const data = {
       perPerson: 885,
       numFamilies: 2,
       perFamily: 3097,
+      familyNames: ['Miguel & Karen', 'Gloria & Rubén Sr.'],
+      splitInfo: 'Split by 2 groups'
+    },
+    8: {
+      dates: 'Jul 27 – Aug 6 · 11 nights',
+      flights: { total: 2560, pp: 320 },
+      stay: { total: 1743, pp: 218 },
+      car: { total: 530, pp: 66 },
+      food: { total: 1920, pp: 240 },
+      grandTotal: 6753,
+      perPerson: 844,
+      numFamilies: 2,
+      perFamily: 3377,
       familyNames: ['Miguel & Karen', 'Rubén & Mariana'],
       splitInfo: 'Split by 2 families'
     },
@@ -743,6 +763,19 @@ const data = {
       perPerson: 915,
       numFamilies: 2,
       perFamily: 3202,
+      familyNames: ['Miguel & Karen', 'Gloria & Rubén Sr.'],
+      splitInfo: 'Split by 2 groups'
+    },
+    8: {
+      dates: 'Dec 5 – 17 · 12 nights',
+      flights: { total: 2560, pp: 320 },
+      stay: { total: 1200, pp: 150 },
+      car: { total: 1284, pp: 161 },
+      food: { total: 1920, pp: 240 },
+      grandTotal: 6964,
+      perPerson: 871,
+      numFamilies: 2,
+      perFamily: 3482,
       familyNames: ['Miguel & Karen', 'Rubén & Mariana'],
       splitInfo: 'Split by 2 families'
     },
